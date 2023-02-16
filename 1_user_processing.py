@@ -9,4 +9,4 @@ with DAG(
             catchup=False,
             tags=['Curso 3', 'Introduction_to_Apache_Airflow']
         ) as dag:
-    None
+    
