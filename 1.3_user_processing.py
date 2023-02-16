@@ -6,12 +6,13 @@ from airflow.operators.dummy import DummyOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from airflow.providers.http.sensors.http import HttpSensor
 
+
 default_args={
     "owner":"Tinmar"
 }
 
 with DAG(
-            '1.2_user_processing',
+            '1.3_user_processing',
             start_date=datetime(2023,2,16),
             schedule_interval='@daily',
             catchup=False,
