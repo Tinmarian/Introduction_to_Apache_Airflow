@@ -108,4 +108,4 @@ with DAG(
 
     end = DummyOperator(task_id='end')
 
-    start >> create_table >> insert_data >> select_data >> is_api_available >> extract_data >> process_user >> store_user >> end
+    start >> create_table >> insert_data >> is_api_available >> extract_data >> process_user >> store_user >> select_data >> end
