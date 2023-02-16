@@ -53,4 +53,4 @@ with DAG(
     
     end = DummyOperator(task_id='end')
 
-    start >> create_table >> end
+    start >> create_table >> insert_data  >> select_data >> end
