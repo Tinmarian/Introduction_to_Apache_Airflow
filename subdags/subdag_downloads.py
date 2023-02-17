@@ -26,4 +26,6 @@ def subdag_downloads(parent_Dag_id, child_dag_id, args):
             bash_command='sleep 10'
         )
 
+        [download_a, download_b, download_c]
+
         return dag
