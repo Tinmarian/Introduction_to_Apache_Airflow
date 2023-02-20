@@ -40,7 +40,7 @@ def _store_user():
 
 
 with DAG(
-            '1.6_user_processing',
+            '1.6.1_user_processing',
             start_date=datetime(2023,2,16),
             schedule_interval='@daily',
             catchup=False,
@@ -108,4 +108,8 @@ with DAG(
 
     end = DummyOperator(task_id='end')
 
-    start >> create_table >> insert_data >> is_api_available >> extract_data >> process_user >> store_user >> select_data >> end
+    start >> create_table >> insert_data
+    start >> is_api_available
+    insert_data >> extract_data 
+    is_api_available >> extract_data
+    extract_data >> process_user >> store_user >> select_data >> end
